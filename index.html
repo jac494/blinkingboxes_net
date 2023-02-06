@@ -14,7 +14,7 @@
 </head>
 <body>
     <center>
-        <pre>
+        <pre id="thisIsDumb">
             
 
   __        __  __            __        __                      __                                                                         __     
@@ -70,3 +70,10 @@
         </ul>
     </div>
 </body>
+
+<script>
+    function swapHeader() {
+        var dumbHeader = document.getElementById("thisIsDumb");
+        dumbHeader.innerHTML = "blinkingboxes.net";
+    }
+</script>

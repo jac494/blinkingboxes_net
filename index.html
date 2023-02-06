@@ -15,22 +15,7 @@
 <body>
     <center>
         <pre id="thisIsDumb">
-            
-
-  __        __  __            __        __                      __                                                                         __     
- /  |      /  |/  |          /  |      /  |                    /  |                                                                       /  |    
- $$ |____  $$ |$$/  _______  $$ |   __ $$/  _______    ______  $$ |____    ______   __    __   ______    _______     _______    ______   _$$ |_   
- $$      \ $$ |/  |/       \ $$ |  /  |/  |/       \  /      \ $$      \  /      \ /  \  /  | /      \  /       |   /       \  /      \ / $$   |  
- $$$$$$$  |$$ |$$ |$$$$$$$  |$$ |_/$$/ $$ |$$$$$$$  |/$$$$$$  |$$$$$$$  |/$$$$$$  |$$  \/$$/ /$$$$$$  |/$$$$$$$/    $$$$$$$  |/$$$$$$  |$$$$$$/   
- $$ |  $$ |$$ |$$ |$$ |  $$ |$$   $$<  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ | $$  $$<  $$    $$ |$$      \    $$ |  $$ |$$    $$ |  $$ | __ 
- $$ |__$$ |$$ |$$ |$$ |  $$ |$$$$$$  \ $$ |$$ |  $$ |$$ \__$$ |$$ |__$$ |$$ \__$$ | /$$$$  \ $$$$$$$$/  $$$$$$  |__ $$ |  $$ |$$$$$$$$/   $$ |/  |
- $$    $$/ $$ |$$ |$$ |  $$ |$$ | $$  |$$ |$$ |  $$ |$$    $$ |$$    $$/ $$    $$/ /$$/ $$  |$$       |/     $$//  |$$ |  $$ |$$       |  $$  $$/ 
- $$$$$$$/  $$/ $$/ $$/   $$/ $$/   $$/ $$/ $$/   $$/  $$$$$$$ |$$$$$$$/   $$$$$$/  $$/   $$/  $$$$$$$/ $$$$$$$/ $$/ $$/   $$/  $$$$$$$/    $$$$/  
-                                                     /  \__$$ |                                                                                   
-                                                     $$    $$/                                                                                    
-                                                      $$$$$$/                                                                                     
- 
- 
+blinkingboxes.net
         </pre>
     </center>
     <div class="main">
@@ -72,8 +57,22 @@
 </body>
 
 <script>
-    function swapHeader() {
+    function shimmerText() {
         var dumbHeader = document.getElementById("thisIsDumb");
-        dumbHeader.innerHTML = "blinkingboxes.net";
+        // ok so the idea is
+        // initialize a blank array to hold the output
+        // elements (blinkingboxes.net where each character is wrapped in a span with a specific id)
+        // set a character array that is the initial string, like
+        // var charArray = dumbHeader.innerHTML; // where charArray here would be the string literal "blinkingboxes.net"
+        // then iterate/enumerate over the character array
+        // var sub_id = f"{letter}{index}";
+        // and append a string formatted like f'<span id="sub_id">{letter}</span>'
+        // and then after that it would be just periodically reading thisIsDumb and setting whatever colors are appropriate
+        // this should probably be in two different functions/structures (where one just does all of this initialization)
+        dumbHeader.innerHTML = 'blinking<span style="background-color:black;color:green;">boxes</span>.net';
     }
+    window.addEventListener("load", () => {
+        // console.log("This function is executed once the page is fully loaded");
+        shimmerText();
+    });
 </script>

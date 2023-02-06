@@ -15,7 +15,7 @@
 <body>
     <center>
         <pre id="thisIsDumb">
-blinkingboxes.net
+<span id="b0" style="background-color:black;color:green;">b</span>linking<span id="b1" style="background-color:black;color:green;">b</span>oxes.net
         </pre>
     </center>
     <div class="main">
@@ -69,10 +69,15 @@ blinkingboxes.net
         // and append a string formatted like f'<span id="sub_id">{letter}</span>'
         // and then after that it would be just periodically reading thisIsDumb and setting whatever colors are appropriate
         // this should probably be in two different functions/structures (where one just does all of this initialization)
-        dumbHeader.innerHTML = 'blinking<span style="background-color:black;color:green;">boxes</span>.net';
+        dumbHeader.innerHTML = '<span id="b0" style="color:green;">b</span>linking<span id="b1" style="color:green;">b</span>oxes.net';
+    }
+    function blinkId(elemId, bgColor) {
+        var elem = document.getElementById(elemId);
+        elem.style.backgroundColor = bgColor;
     }
     window.addEventListener("load", () => {
         // console.log("This function is executed once the page is fully loaded");
-        shimmerText();
+        blinkId("b0", "darkgray");
+        blinkId("b1", "darkgray");
     });
 </script>

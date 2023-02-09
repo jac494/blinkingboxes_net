@@ -10,12 +10,49 @@
             max-width: 800px;
             padding: 20px 40px 80px 40px;
         }
+        @keyframes blinkletter {
+            0% {background-color: lightgray; color: green;}
+            3% {background-color: lightgreen; color: black;}
+            6% {background-color: lightgray; color: green;}
+            8% {background-color: lightgreen; color: black;}
+            10% {background-color: lightgray; color: green;}
+            11% {background-color: lightgreen; color: black;}
+            100% {background-color: lightgray; color: green;}
+        }
+        #b0 {
+            animation-name: blinkletter;
+            animation-duration: 3.1s;
+            animation-iteration-count: infinite;
+        }
+        #b1 {
+            animation-name: blinkletter;
+            animation-duration: 3.3s;
+            animation-iteration-count: infinite;
+        }
     </style>
 </head>
 <body>
     <center>
-        <pre id="thisIsDumb">
-<span id="b0" style="background-color:black;color:green;">b</span>linking<span id="b1" style="background-color:black;color:green;">b</span>oxes.net
+        <pre>
+<!-- span id="b0">b</span>linking<span id="b1">b</span>oxes.net -->
+        </pre>
+        <pre>
+
+
+            <span id="b0"> __       </span> __  __            __        __                     <span id="b1"> __       </span>                                                                  __     
+            <span id="b0">/  |      </span>/  |/  |          /  |      /  |                    <span id="b1">/  |      </span>                                                                 /  |    
+            <span id="b0">$$ |____  </span>$$ |$$/  _______  $$ |   __ $$/  _______    ______  <span id="b1">$$ |____  </span>  ______   __    __   ______    _______     _______    ______   _$$ |_   
+            <span id="b0">$$      \ </span>$$ |/  |/       \ $$ |  /  |/  |/       \  /      \ <span id="b1">$$      \ </span> /      \ /  \  /  | /      \  /       |   /       \  /      \ / $$   |  
+            <span id="b0">$$$$$$$  |</span>$$ |$$ |$$$$$$$  |$$ |_/$$/ $$ |$$$$$$$  |/$$$$$$  |<span id="b1">$$$$$$$  |</span>/$$$$$$  |$$  \/$$/ /$$$$$$  |/$$$$$$$/    $$$$$$$  |/$$$$$$  |$$$$$$/   
+            <span id="b0">$$ |  $$ |</span>$$ |$$ |$$ |  $$ |$$   $$<  $$ |$$ |  $$ |$$ |  $$ |<span id="b1">$$ |  $$ |</span>$$ |  $$ | $$  $$<  $$    $$ |$$      \    $$ |  $$ |$$    $$ |  $$ | __ 
+            <span id="b0">$$ |__$$ |</span>$$ |$$ |$$ |  $$ |$$$$$$  \ $$ |$$ |  $$ |$$ \__$$ |<span id="b1">$$ |__$$ |</span>$$ \__$$ | /$$$$  \ $$$$$$$$/  $$$$$$  |__ $$ |  $$ |$$$$$$$$/   $$ |/  |
+            <span id="b0">$$    $$/ </span>$$ |$$ |$$ |  $$ |$$ | $$  |$$ |$$ |  $$ |$$    $$ |<span id="b1">$$    $$/ </span>$$    $$/ /$$/ $$  |$$       |/     $$//  |$$ |  $$ |$$       |  $$  $$/ 
+            <span id="b0">$$$$$$$/  </span>$$/ $$/ $$/   $$/ $$/   $$/ $$/ $$/   $$/  $$$$$$$ |<span id="b1">$$$$$$$/  </span> $$$$$$/  $$/   $$/  $$$$$$$/ $$$$$$$/ $$/ $$/   $$/  $$$$$$$/    $$$$/  
+                                                                /  \__$$ |                                                                                   
+                                                                $$    $$/                                                                                    
+                                                                 $$$$$$/                                                                                     
+            
+            
         </pre>
     </center>
     <div class="main">
@@ -56,40 +93,3 @@
         </ul>
     </div>
 </body>
-
-<script>
-    function shimmerText() {
-        var dumbHeader = document.getElementById("thisIsDumb");
-        // ok so the idea is (I currently have no clue how to speak JS)
-        // initialize a blank array to hold the output
-        // elements (blinkingboxes.net where each character is wrapped in a span with a specific id)
-        // set a character array that is the initial string, like
-        // var charArray = dumbHeader.innerHTML; // where charArray here would be the string literal "blinkingboxes.net"
-        // then iterate/enumerate over the character array
-        // var sub_id = f"{letter}{index}";
-        // and append a string formatted like f'<span id="sub_id">{letter}</span>'
-        // and then after that it would be just periodically reading thisIsDumb and setting whatever colors are appropriate
-        // this should probably be in two different functions/structures (where one just does all of this initialization)
-        dumbHeader.innerHTML = '<span id="b0" style="color:green;">b</span>linking<span id="b1" style="color:green;">b</span>oxes.net';
-    }
-    function blinkId(elemId, bgColor) {
-        var elem = document.getElementById(elemId);
-        elem.style.backgroundColor = bgColor;
-    }
-    window.addEventListener("load", () => {
-        // console.log("This function is executed once the page is fully loaded");
-        let switched_on = true;
-        let bgColor = "darkgray";
-        // while (true) {
-            if (switched_on) {
-                bgColor = "lightgray";
-            } else {
-                bgColor = "darkgray";
-            }
-            blinkId("b0", bgColor);
-            blinkId("b1", bgColor);
-            switched_on = !switched_on;
-            console.log("switched_on = " + switched_on);
-        // }
-    });
-</script>

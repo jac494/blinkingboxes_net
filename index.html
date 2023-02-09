@@ -10,47 +10,39 @@
             max-width: 800px;
             padding: 20px 40px 80px 40px;
         }
-        @keyframes blinkletter {
+        @keyframes cursorblink {
             0% {background-color: lightgray; color: green;}
-            3% {background-color: lightgreen; color: black;}
-            6% {background-color: lightgray; color: green;}
-            8% {background-color: lightgreen; color: black;}
-            10% {background-color: lightgray; color: green;}
-            11% {background-color: lightgreen; color: black;}
+            20% {background-color: lightgreen; color: black;}
             100% {background-color: lightgray; color: green;}
         }
-        #b0 {
-            animation-name: blinkletter;
-            animation-duration: 3.1s;
-            animation-iteration-count: infinite;
-        }
-        #b1 {
-            animation-name: blinkletter;
-            animation-duration: 3.3s;
+        .cursor {
+            animation-name: cursorblink;
+            animation-duration: .7s;
             animation-iteration-count: infinite;
         }
     </style>
 </head>
 <body>
     <center>
-        <pre>
-<!-- span id="b0">b</span>linking<span id="b1">b</span>oxes.net -->
-        </pre>
+        <!-- this is the old header where I tested out the idea of 'blinking cursor' text, it can probably go away but not until I'm satisfied with the big header -->
+        <!-- pre>
+<span id="b0">b</span>linking<span id="b1">b</span>oxes.net
+        </pre -->
         <pre>
 
 
-            <span id="b0"> __       </span> __  __            __        __                     <span id="b1"> __       </span>                                                                  __     
-            <span id="b0">/  |      </span>/  |/  |          /  |      /  |                    <span id="b1">/  |      </span>                                                                 /  |    
-            <span id="b0">$$ |____  </span>$$ |$$/  _______  $$ |   __ $$/  _______    ______  <span id="b1">$$ |____  </span>  ______   __    __   ______    _______     _______    ______   _$$ |_   
-            <span id="b0">$$      \ </span>$$ |/  |/       \ $$ |  /  |/  |/       \  /      \ <span id="b1">$$      \ </span> /      \ /  \  /  | /      \  /       |   /       \  /      \ / $$   |  
-            <span id="b0">$$$$$$$  |</span>$$ |$$ |$$$$$$$  |$$ |_/$$/ $$ |$$$$$$$  |/$$$$$$  |<span id="b1">$$$$$$$  |</span>/$$$$$$  |$$  \/$$/ /$$$$$$  |/$$$$$$$/    $$$$$$$  |/$$$$$$  |$$$$$$/   
-            <span id="b0">$$ |  $$ |</span>$$ |$$ |$$ |  $$ |$$   $$<  $$ |$$ |  $$ |$$ |  $$ |<span id="b1">$$ |  $$ |</span>$$ |  $$ | $$  $$<  $$    $$ |$$      \    $$ |  $$ |$$    $$ |  $$ | __ 
-            <span id="b0">$$ |__$$ |</span>$$ |$$ |$$ |  $$ |$$$$$$  \ $$ |$$ |  $$ |$$ \__$$ |<span id="b1">$$ |__$$ |</span>$$ \__$$ | /$$$$  \ $$$$$$$$/  $$$$$$  |__ $$ |  $$ |$$$$$$$$/   $$ |/  |
-            <span id="b0">$$    $$/ </span>$$ |$$ |$$ |  $$ |$$ | $$  |$$ |$$ |  $$ |$$    $$ |<span id="b1">$$    $$/ </span>$$    $$/ /$$/ $$  |$$       |/     $$//  |$$ |  $$ |$$       |  $$  $$/ 
-            <span id="b0">$$$$$$$/  </span>$$/ $$/ $$/   $$/ $$/   $$/ $$/ $$/   $$/  $$$$$$$ |<span id="b1">$$$$$$$/  </span> $$$$$$/  $$/   $$/  $$$$$$$/ $$$$$$$/ $$/ $$/   $$/  $$$$$$$/    $$$$/  
-                                                                /  \__$$ |                                                                                   
-                                                                $$    $$/                                                                                    
-                                                                 $$$$$$/                                                                                     
+             __        __  __            __        __                      __                                                                         __     <span class="cursor">          </span>
+            /  |      /  |/  |          /  |      /  |                    /  |                                                                       /  |    <span class="cursor">          </span>
+            $$ |____  $$ |$$/  _______  $$ |   __ $$/  _______    ______  $$ |____    ______   __    __   ______    _______     _______    ______   _$$ |_   <span class="cursor">          </span>
+            $$      \ $$ |/  |/       \ $$ |  /  |/  |/       \  /      \ $$      \  /      \ /  \  /  | /      \  /       |   /       \  /      \ / $$   |  <span class="cursor">          </span>
+            $$$$$$$  |$$ |$$ |$$$$$$$  |$$ |_/$$/ $$ |$$$$$$$  |/$$$$$$  |$$$$$$$  |/$$$$$$  |$$  \/$$/ /$$$$$$  |/$$$$$$$/    $$$$$$$  |/$$$$$$  |$$$$$$/   <span class="cursor">          </span>
+            $$ |  $$ |$$ |$$ |$$ |  $$ |$$   $$<  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ | $$  $$<  $$    $$ |$$      \    $$ |  $$ |$$    $$ |  $$ | __ <span class="cursor">          </span>
+            $$ |__$$ |$$ |$$ |$$ |  $$ |$$$$$$  \ $$ |$$ |  $$ |$$ \__$$ |$$ |__$$ |$$ \__$$ | /$$$$  \ $$$$$$$$/  $$$$$$  |__ $$ |  $$ |$$$$$$$$/   $$ |/  |<span class="cursor">          </span>
+            $$    $$/ $$ |$$ |$$ |  $$ |$$ | $$  |$$ |$$ |  $$ |$$    $$ |$$    $$/ $$    $$/ /$$/ $$  |$$       |/     $$//  |$$ |  $$ |$$       |  $$  $$/ <span class="cursor">          </span>
+            $$$$$$$/  $$/ $$/ $$/   $$/ $$/   $$/ $$/ $$/   $$/  $$$$$$$ |$$$$$$$/   $$$$$$/  $$/   $$/  $$$$$$$/ $$$$$$$/ $$/ $$/   $$/  $$$$$$$/    $$$$/  <span class="cursor">          </span>
+                                                                /  \__$$ |                                                                                   <span class="blankspace">          </span>
+                                                                $$    $$/                                                                                    <span class="blankspace">          </span>
+                                                                 $$$$$$/                                                                                     <span class="blankspace">          </span>
             
             
         </pre>
@@ -93,3 +85,8 @@
         </ul>
     </div>
 </body>
+
+<script>
+    // I think I'm going to try and make it look like the header (blinkingboxes.net in ascii-art-text) is being 'typed out' after the page loads
+    // so just start off with the 
+</script>

@@ -1,4 +1,6 @@
 #!/usr/bin/sh
-cp *.html /var/www/html/
-cp drew_conner_*.pdf /var/www/html/
-cp qr /var/www/html/
+dubpath=/var/www/html/
+cp *.html $dubpath
+cp drew_conner_*.pdf $dubpath
+cp qr $dubpath
+cp consent $dubpath
